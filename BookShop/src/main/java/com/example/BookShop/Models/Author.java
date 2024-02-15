@@ -4,6 +4,7 @@ import com.example.BookShop.Base.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotEmpty;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.Formula;
@@ -32,8 +33,9 @@ public class Author extends BaseEntity<Long>{
 //    @Transient
     @Formula("(select count(*) from books book where book.author_id =id)")
     private int count;
+
     @Email
-    private String Email;
+    private String email;
 
     @JsonManagedReference
     @OneToMany(mappedBy = "author")
