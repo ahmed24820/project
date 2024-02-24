@@ -2,6 +2,7 @@ package com.example.BookShop.Models;
 
 import com.example.BookShop.Base.BaseEntity;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;
@@ -21,7 +22,7 @@ import java.util.List;
 import java.util.Set;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
-
+@Schema(name = "Author Entity")
 @Entity
 @Table(name = "authors")
 @Getter
